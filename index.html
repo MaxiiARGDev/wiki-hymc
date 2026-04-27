@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HygieneMC Wiki</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #0f172a;
+      color: #e2e8f0;
+    }
+    header {
+      background: #1e293b;
+      padding: 20px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .container {
+      display: flex;
+    }
+    nav {
+      width: 250px;
+      background: #020617;
+      padding: 20px;
+      height: 100vh;
+      position: sticky;
+      top: 0;
+    }
+    nav a {
+      display: block;
+      color: #94a3b8;
+      text-decoration: none;
+      margin: 10px 0;
+    }
+    nav a:hover {
+      color: #38bdf8;
+    }
+    main {
+      flex: 1;
+      padding: 30px;
+    }
+    h2 {
+      border-bottom: 1px solid #334155;
+      padding-bottom: 5px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+    }
+    td, th {
+      border: 1px solid #334155;
+      padding: 8px;
+    }
+    th {
+      background: #1e293b;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>🛁 HygieneMC Wiki</header>
+
+<div class="container">
+
+<nav>
+  <a href="#core">Core Mechanics</a>
+  <a href="#commands">Commands</a>
+  <a href="#permissions">Permissions</a>
+  <a href="#items">Items</a>
+  <a href="#economy">Economy</a>
+  <a href="#placeholders">Placeholders</a>
+  <a href="#config">Configuration</a>
+</nav>
+
+<main>
+
+<h2 id="core">🧼 Core Mechanics</h2>
+<p>Hygiene ranges from 0 to 100 and decreases over time and activity.</p>
+
+<table>
+<tr><th>Stage</th><th>Range</th><th>Effects</th></tr>
+<tr><td>Clean</td><td>70–100</td><td>No effects</td></tr>
+<tr><td>Normal</td><td>40–69</td><td>Default</td></tr>
+<tr><td>Dirty</td><td>20–39</td><td>Warnings</td></tr>
+<tr><td>Filthy</td><td>0–19</td><td>Particles & sounds</td></tr>
+</table>
+
+---
+
+<h2 id="commands">⌨️ Commands</h2>
+
+<h3>Player</h3>
+<ul>
+  <li>/hygiene</li>
+  <li>/hygiene ui</li>
+  <li>/hygiene shop</li>
+</ul>
+
+<h3>Admin</h3>
+<ul>
+  <li>/hygiene set &lt;player&gt; &lt;value&gt;</li>
+  <li>/hygiene reload</li>
+</ul>
+
+---
+
+<h2 id="permissions">🔐 Permissions</h2>
+<ul>
+  <li><b>hygiene.use</b></li>
+  <li><b>hygiene.admin</b></li>
+</ul>
+
+---
+
+<h2 id="items">🛠️ Items</h2>
+<p>Showers, Toilets, Soaps and Decorative Furniture included.</p>
+
+---
+
+<h2 id="economy">🛒 Economy</h2>
+<p>Integrated with Vault. Use /hygiene shop.</p>
+
+---
+
+<h2 id="placeholders">📊 Placeholders</h2>
+<ul>
+  <li>%hygiene_value%</li>
+  <li>%hygiene_status%</li>
+  <li>%hygiene_bar%</li>
+</ul>
+
+---
+
+<h2 id="config">⚙️ Configuration</h2>
+<p>All files are located in /plugins/HygieneMC/</p>
+
+</main>
+
+</div>
+
+</body>
+</html>
