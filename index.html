@@ -1,147 +1,381 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>HygieneMC Wiki</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #0f172a;
-      color: #e2e8f0;
-    }
-    header {
-      background: #1e293b;
-      padding: 20px;
-      text-align: center;
-      font-size: 24px;
-      font-weight: bold;
-    }
-    .container {
-      display: flex;
-    }
-    nav {
-      width: 250px;
-      background: #020617;
-      padding: 20px;
-      height: 100vh;
-      position: sticky;
-      top: 0;
-    }
-    nav a {
-      display: block;
-      color: #94a3b8;
-      text-decoration: none;
-      margin: 10px 0;
-    }
-    nav a:hover {
-      color: #38bdf8;
-    }
-    main {
-      flex: 1;
-      padding: 30px;
-    }
-    h2 {
-      border-bottom: 1px solid #334155;
-      padding-bottom: 5px;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 15px 0;
-    }
-    td, th {
-      border: 1px solid #334155;
-      padding: 8px;
-    }
-    th {
-      background: #1e293b;
-    }
-  </style>
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HygieneMC | Wiki Oficial</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #00d2ff;
+            --secondary: #3a7bd5;
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --text-main: #f1f5f9;
+            --text-dim: #94a3b8;
+            --accent: #10b981;
+            --danger: #ef4444;
+            --glass: rgba(30, 41, 59, 0.7);
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+        }
+
+        /* Sidebar Navigation */
+        nav {
+            width: 280px;
+            height: 100vh;
+            background: var(--bg-card);
+            position: fixed;
+            padding: 2rem;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            overflow-y: auto;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .nav-links a {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 0.8rem 1rem;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            background: rgba(0, 210, 255, 0.1);
+            color: var(--primary);
+            transform: translateX(5px);
+        }
+
+        /* Main Content */
+        main {
+            margin-left: 280px;
+            padding: 4rem;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        header {
+            margin-bottom: 5rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        header p {
+            color: var(--text-dim);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        section {
+            margin-bottom: 6rem;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: var(--primary);
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .card i {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        /* Table Styling */
+        .table-container {
+            background: var(--bg-card);
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th, td {
+            padding: 1.2rem 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        th {
+            background: rgba(0, 210, 255, 0.05);
+            color: var(--primary);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        tr:last-child td { border-bottom: none; }
+
+        .badge {
+            padding: 4px 12px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .badge-cmd { background: rgba(0, 210, 255, 0.15); color: var(--primary); }
+        .badge-perm { background: rgba(16, 185, 129, 0.15); color: var(--accent); }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            nav { width: 80px; padding: 1rem; }
+            nav span, .logo span { display: none; }
+            main { margin-left: 80px; padding: 2rem; }
+            header h1 { font-size: 2.5rem; }
+        }
+
+        @media (max-width: 600px) {
+            nav { display: none; }
+            main { margin-left: 0; }
+        }
+    </style>
+</head>
 <body>
 
-<header>🛁 HygieneMC Wiki</header>
+    <nav>
+        <div class="logo">
+            <i class="fas fa-soap"></i>
+            <span>HygieneMC</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#inicio" class="active"><i class="fas fa-home"></i> <span>Inicio</span></a></li>
+            <li><a href="#mecanicas"><i class="fas fa-gears"></i> <span>Mecánicas</span></a></li>
+            <li><a href="#comandos"><i class="fas fa-terminal"></i> <span>Comandos</span></a></li>
+            <li><a href="#items"><i class="fas fa-couch"></i> <span>Ítems y Muebles</span></a></li>
+            <li><a href="#placeholders"><i class="fas fa-code"></i> <span>Placeholders</span></a></li>
+        </ul>
+    </nav>
 
-<div class="container">
+    <main>
+        <header id="inicio">
+            <h1>HygieneMC</h1>
+            <p>La guía definitiva para el sistema de higiene más inmersivo de Minecraft. Mantén a tus jugadores limpios y con estilo.</p>
+        </header>
 
-<nav>
-  <a href="#core">Core Mechanics</a>
-  <a href="#commands">Commands</a>
-  <a href="#permissions">Permissions</a>
-  <a href="#items">Items</a>
-  <a href="#economy">Economy</a>
-  <a href="#placeholders">Placeholders</a>
-  <a href="#config">Configuration</a>
-</nav>
+        <section id="mecanicas">
+            <h2><i class="fas fa-brain"></i> Mecánicas Principales</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <i class="fas fa-droplet"></i>
+                    <h3>Niveles de Higiene</h3>
+                    <p>El sistema rastrea un valor de 0 a 100. Disminuye con el tiempo y se acelera al correr, saltar o combatir.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-wind"></i>
+                    <h3>Estados (Stages)</h3>
+                    <p>Desde "Limpio" hasta "Asqueroso". Los estados críticos emiten partículas de mal olor y sonidos ambientales.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-bell"></i>
+                    <h3>Notificaciones</h3>
+                    <p>Alertas visuales vía ActionBar y Títulos para asegurar que el jugador sepa cuándo necesita un baño.</p>
+                </div>
+            </div>
+        </section>
 
-<main>
+        <section id="comandos">
+            <h2><i class="fas fa-code"></i> Comandos y Permisos</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Comando</th>
+                            <th>Descripción</th>
+                            <th>Permiso</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="badge badge-cmd">/hygiene</span></td>
+                            <td>Consulta tu higiene actual</td>
+                            <td><span class="badge badge-perm">hygiene.use</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge badge-cmd">/hygiene shop</span></td>
+                            <td>Abre la tienda global</td>
+                            <td><span class="badge badge-perm">hygiene.use</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge badge-cmd">/hygiene reload</span></td>
+                            <td>Recarga la configuración</td>
+                            <td><span class="badge badge-perm">hygiene.admin</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge badge-cmd">/hygiene set <p> <v></span></td>
+                            <td>Ajusta la higiene de un jugador</td>
+                            <td><span class="badge badge-perm">hygiene.admin</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge badge-cmd">/hygiene givesoap</span></td>
+                            <td>Entrega jabones específicos</td>
+                            <td><span class="badge badge-perm">hygiene.admin</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
 
-<h2 id="core">🧼 Core Mechanics</h2>
-<p>Hygiene ranges from 0 to 100 and decreases over time and activity.</p>
+        <section id="items">
+            <h2><i class="fas fa-couch"></i> Mobiliario e Ítems</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <i class="fas fa-shower"></i>
+                    <h3>Duchas Funcionales</h3>
+                    <p>Bloques interactivos con partículas de agua. Restauran la higiene al máximo en segundos.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-toilet"></i>
+                    <h3>Inodoros y Lavabos</h3>
+                    <p>Múltiples variantes de colores (Blanco, Azul, Rosa) para encajar en cualquier construcción.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-pump-soap"></i>
+                    <h3>Jabones Especiales</h3>
+                    <p>Ítems consumibles que limpian al instante. ¡Ideales para viajes largos!</p>
+                </div>
+            </div>
+        </section>
 
-<table>
-<tr><th>Stage</th><th>Range</th><th>Effects</th></tr>
-<tr><td>Clean</td><td>70–100</td><td>No effects</td></tr>
-<tr><td>Normal</td><td>40–69</td><td>Default</td></tr>
-<tr><td>Dirty</td><td>20–39</td><td>Warnings</td></tr>
-<tr><td>Filthy</td><td>0–19</td><td>Particles & sounds</td></tr>
-</table>
+        <section id="placeholders">
+            <h2><i class="fas fa-database"></i> Integración PlaceholderAPI</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Variable</th>
+                            <th>Resultado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>%hygiene_value%</code></td>
+                            <td>Valor numérico (Ej: 85)</td>
+                        </tr>
+                        <tr>
+                            <td><code>%hygiene_status%</code></td>
+                            <td>Nombre del estado (Ej: Limpio)</td>
+                        </tr>
+                        <tr>
+                            <td><code>%hygiene_bar%</code></td>
+                            <td>Barra de progreso visual</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
 
----
+        <footer style="margin-top: 5rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.05); color: var(--text-dim); text-align: center;">
+            <p>&copy; 2026 HygieneMC Plugin. Desarrollado para servidores de alto rendimiento.</p>
+        </footer>
+    </main>
 
-<h2 id="commands">⌨️ Commands</h2>
+    <script>
+        // Active link switching on scroll
+        const sections = document.querySelectorAll("section, header");
+        const navLinks = document.querySelectorAll(".nav-links a");
 
-<h3>Player</h3>
-<ul>
-  <li>/hygiene</li>
-  <li>/hygiene ui</li>
-  <li>/hygiene shop</li>
-</ul>
+        window.addEventListener("scroll", () => {
+            let current = "";
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute("id");
+                }
+            });
 
-<h3>Admin</h3>
-<ul>
-  <li>/hygiene set &lt;player&gt; &lt;value&gt;</li>
-  <li>/hygiene reload</li>
-</ul>
-
----
-
-<h2 id="permissions">🔐 Permissions</h2>
-<ul>
-  <li><b>hygiene.use</b></li>
-  <li><b>hygiene.admin</b></li>
-</ul>
-
----
-
-<h2 id="items">🛠️ Items</h2>
-<p>Showers, Toilets, Soaps and Decorative Furniture included.</p>
-
----
-
-<h2 id="economy">🛒 Economy</h2>
-<p>Integrated with Vault. Use /hygiene shop.</p>
-
----
-
-<h2 id="placeholders">📊 Placeholders</h2>
-<ul>
-  <li>%hygiene_value%</li>
-  <li>%hygiene_status%</li>
-  <li>%hygiene_bar%</li>
-</ul>
-
----
-
-<h2 id="config">⚙️ Configuration</h2>
-<p>All files are located in /plugins/HygieneMC/</p>
-
-</main>
-
-</div>
-
+            navLinks.forEach((a) => {
+                a.classList.remove("active");
+                if (a.getAttribute("href").includes(current)) {
+                    a.classList.add("active");
+                }
+            });
+        });
+    </script>
 </body>
 </html>
