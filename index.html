@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -80,7 +81,8 @@
             transition: all 0.3s ease;
         }
 
-        .nav-links a:hover, .nav-links a.active {
+        .nav-links a:hover,
+        .nav-links a.active {
             background: rgba(0, 210, 255, 0.1);
             color: var(--primary);
             transform: translateX(5px);
@@ -118,8 +120,15 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         h2 {
@@ -176,7 +185,8 @@
             text-align: left;
         }
 
-        th, td {
+        th,
+        td {
             padding: 1.2rem 1.5rem;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
@@ -190,7 +200,9 @@
             letter-spacing: 1px;
         }
 
-        tr:last-child td { border-bottom: none; }
+        tr:last-child td {
+            border-bottom: none;
+        }
 
         .badge {
             padding: 4px 12px;
@@ -199,23 +211,50 @@
             font-weight: 600;
         }
 
-        .badge-cmd { background: rgba(0, 210, 255, 0.15); color: var(--primary); }
-        .badge-perm { background: rgba(16, 185, 129, 0.15); color: var(--accent); }
+        .badge-cmd {
+            background: rgba(0, 210, 255, 0.15);
+            color: var(--primary);
+        }
+
+        .badge-perm {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--accent);
+        }
 
         /* Responsive */
         @media (max-width: 992px) {
-            nav { width: 80px; padding: 1rem; }
-            nav span, .logo span { display: none; }
-            main { margin-left: 80px; padding: 2rem; }
-            header h1 { font-size: 2.5rem; }
+            nav {
+                width: 80px;
+                padding: 1rem;
+            }
+
+            nav span,
+            .logo span {
+                display: none;
+            }
+
+            main {
+                margin-left: 80px;
+                padding: 2rem;
+            }
+
+            header h1 {
+                font-size: 2.5rem;
+            }
         }
 
         @media (max-width: 600px) {
-            nav { display: none; }
-            main { margin-left: 0; }
+            nav {
+                display: none;
+            }
+
+            main {
+                margin-left: 0;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <nav>
@@ -227,15 +266,20 @@
             <li><a href="#inicio" class="active"><i class="fas fa-home"></i> <span>Inicio</span></a></li>
             <li><a href="#mecanicas"><i class="fas fa-gears"></i> <span>Mecánicas</span></a></li>
             <li><a href="#comandos"><i class="fas fa-terminal"></i> <span>Comandos</span></a></li>
-            <li><a href="#items"><i class="fas fa-couch"></i> <span>Ítems y Muebles</span></a></li>
+            <li><a href="#crafteos"><i class="fas fa-hammer"></i> <span>Crafteos</span></a></li>
+            <li><a href="#items"><i class="fas fa-couch"></i> <span>Ítems</span></a></li>
+            <li><a href="#economia"><i class="fas fa-coins"></i> <span>Economía</span></a></li>
             <li><a href="#placeholders"><i class="fas fa-code"></i> <span>Placeholders</span></a></li>
+            <li><a href="#instalacion"><i class="fas fa-download"></i> <span>Instalación</span></a></li>
+            <li><a href="#faq"><i class="fas fa-question-circle"></i> <span>FAQ</span></a></li>
         </ul>
     </nav>
 
     <main>
         <header id="inicio">
             <h1>HygieneMC</h1>
-            <p>La guía definitiva para el sistema de higiene más inmersivo de Minecraft. Mantén a tus jugadores limpios y con estilo.</p>
+            <p>La guía definitiva para el sistema de higiene más inmersivo de Minecraft. Mantén a tus jugadores limpios
+                y con estilo.</p>
         </header>
 
         <section id="mecanicas">
@@ -244,23 +288,28 @@
                 <div class="card">
                     <i class="fas fa-droplet"></i>
                     <h3>Niveles de Higiene</h3>
-                    <p>El sistema rastrea un valor de 0 a 100. Disminuye con el tiempo y se acelera al correr, saltar o combatir.</p>
+                    <p>El sistema rastrea un valor de 0 a 100. Disminuye con el tiempo y se acelera al correr, saltar o
+                        combatir.</p>
                 </div>
                 <div class="card">
                     <i class="fas fa-wind"></i>
                     <h3>Estados (Stages)</h3>
-                    <p>Desde "Limpio" hasta "Asqueroso". Los estados críticos emiten partículas de mal olor y sonidos ambientales.</p>
+                    <p>Desde "Limpio" hasta "Asqueroso". Los estados críticos emiten partículas de mal olor y sonidos
+                        ambientales.</p>
                 </div>
                 <div class="card">
                     <i class="fas fa-bell"></i>
                     <h3>Notificaciones</h3>
-                    <p>Alertas visuales vía ActionBar y Títulos para asegurar que el jugador sepa cuándo necesita un baño.</p>
+                    <p>Alertas visuales vía ActionBar y Títulos para asegurar que el jugador sepa cuándo necesita un
+                        baño.</p>
                 </div>
             </div>
         </section>
 
         <section id="comandos">
             <h2><i class="fas fa-code"></i> Comandos y Permisos</h2>
+            <h3 style="margin: 2rem 0 1rem; color: var(--text-main);"><i class="fas fa-user"></i> Comandos de Jugador
+            </h3>
             <div class="table-container">
                 <table>
                     <thead>
@@ -273,31 +322,112 @@
                     <tbody>
                         <tr>
                             <td><span class="badge badge-cmd">/hygiene</span></td>
-                            <td>Consulta tu higiene actual</td>
+                            <td>Muestra tu nivel actual de higiene</td>
+                            <td><span class="badge badge-perm">hygiene.use</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge badge-cmd">/hygiene ui</span></td>
+                            <td>Abre el menú de configuración personal</td>
                             <td><span class="badge badge-perm">hygiene.use</span></td>
                         </tr>
                         <tr>
                             <td><span class="badge badge-cmd">/hygiene shop</span></td>
-                            <td>Abre la tienda global</td>
+                            <td>Abre la tienda global de higiene</td>
                             <td><span class="badge badge-perm">hygiene.use</span></td>
                         </tr>
                         <tr>
+                            <td><span class="badge badge-cmd">/hygiene buysoap &lt;tipo&gt; [cant]</span></td>
+                            <td>Compra jabón específico desde cualquier lugar</td>
+                            <td><span class="badge badge-perm">hygiene.use</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 style="margin: 3rem 0 1rem; color: var(--text-main);"><i class="fas fa-user-shield"></i> Comandos de
+                Administrador</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Comando</th>
+                            <th>Descripción</th>
+                            <th>Permiso</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="badge badge-cmd">/hygiene get &lt;jugador&gt;</span></td>
+                            <td>Consulta la higiene de otro jugador</td>
+                            <td><span class="badge badge-perm">hygiene.admin</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge badge-cmd">/hygiene set &lt;jugador&gt; &lt;valor&gt;</span></td>
+                            <td>Establece la higiene de un jugador (0-100)</td>
+                            <td><span class="badge badge-perm">hygiene.admin</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge badge-cmd">/hygiene add &lt;jugador&gt; &lt;valor&gt;</span></td>
+                            <td>Suma o resta higiene a un jugador</td>
+                            <td><span class="badge badge-perm">hygiene.admin</span></td>
+                        </tr>
+                        <tr>
                             <td><span class="badge badge-cmd">/hygiene reload</span></td>
-                            <td>Recarga la configuración</td>
+                            <td>Recarga todos los archivos de configuración</td>
                             <td><span class="badge badge-perm">hygiene.admin</span></td>
                         </tr>
                         <tr>
-                            <td><span class="badge badge-cmd">/hygiene set <p> <v></span></td>
-                            <td>Ajusta la higiene de un jugador</td>
+                            <td><span class="badge badge-cmd">/hygiene givesoap &lt;p&gt; [c] [v]</span></td>
+                            <td>Entrega jabón directamente a un jugador</td>
                             <td><span class="badge badge-perm">hygiene.admin</span></td>
                         </tr>
                         <tr>
-                            <td><span class="badge badge-cmd">/hygiene givesoap</span></td>
-                            <td>Entrega jabones específicos</td>
+                            <td><span class="badge badge-cmd">/hygiene giveshower [jugador]</span></td>
+                            <td>Entrega el ítem de Ducha (Shower)</td>
+                            <td><span class="badge badge-perm">hygiene.admin</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge badge-cmd">/hygiene givetoilet [v] [j]</span></td>
+                            <td>Entrega el ítem de Inodoro (Toilet)</td>
+                            <td><span class="badge badge-perm">hygiene.admin</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge badge-cmd">/hygiene givelavatory [v] [j]</span></td>
+                            <td>Entrega el ítem de Lavabo (Lavatory)</td>
+                            <td><span class="badge badge-perm">hygiene.admin</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge badge-cmd">/hygiene givedecor &lt;id&gt; [j]</span></td>
+                            <td>Entrega un mueble decorativo específico</td>
                             <td><span class="badge badge-perm">hygiene.admin</span></td>
                         </tr>
                     </tbody>
                 </table>
+            </div>
+        </section>
+
+        <section id="crafteos">
+            <h2><i class="fas fa-hammer"></i> Crafteos y Recetas</h2>
+            <p style="margin-bottom: 2rem; color: var(--text-dim);">Puedes fabricar tu propio equipamiento de higiene usando materiales básicos en la mesa de crafteo.</p>
+            <div class="card-grid">
+                <div class="card">
+                    <i class="fas fa-shower"></i>
+                    <h3>Ducha de Hierro</h3>
+                    <p><strong>Receta:</strong> 1 Botón de Piedra + 1 Lingote de Hierro.</p>
+                    <p style="font-size: 0.9rem; color: var(--text-dim); margin-top: 0.5rem;">(Configurable en <code>shower.yml</code>)</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-toilet"></i>
+                    <h3>Inodoro Base</h3>
+                    <p><strong>Receta:</strong> 1 Bloque de Cuarzo + 1 Cubo de Agua.</p>
+                    <p style="font-size: 0.9rem; color: var(--text-dim); margin-top: 0.5rem;">Resulta en el modelo básico de porcelana.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-soap"></i>
+                    <h3>Jabón Casero</h3>
+                    <p><strong>Receta:</strong> Mezcla tintes y materiales grasos (Configurable).</p>
+                    <p style="font-size: 0.9rem; color: var(--text-dim); margin-top: 0.5rem;">Crafteo sin forma en la mesa de trabajo.</p>
+                </div>
             </div>
         </section>
 
@@ -318,6 +448,32 @@
                     <i class="fas fa-pump-soap"></i>
                     <h3>Jabones Especiales</h3>
                     <p>Ítems consumibles que limpian al instante. ¡Ideales para viajes largos!</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="economia">
+            <h2><i class="fas fa-coins"></i> Tienda y Economía</h2>
+            <div class="card" style="margin-bottom: 2rem; border-left: 4px solid var(--primary);">
+                <p>HygieneMC se integra totalmente con <strong>Vault</strong>, permitiendo un sistema económico fluido
+                    donde la higiene tiene un valor real en tu servidor. Los jugadores pueden abrir la tienda con
+                    <code>/hygiene shop</code> para comprar:</p>
+            </div>
+            <div class="card-grid">
+                <div class="card">
+                    <i class="fas fa-basket-shopping"></i>
+                    <h3>Jabones de Calidad</h3>
+                    <p>Compra jabones de diferentes calidades y eficacias directamente desde el menú de la tienda.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-chair"></i>
+                    <h3>Mobiliario para Casas</h3>
+                    <p>Acceso a mobiliario funcional y decorativo para que los jugadores personalicen sus hogares.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-palette"></i>
+                    <h3>Variantes Estéticas</h3>
+                    <p>Inodoros y lavabos de múltiples colores para encajar con cualquier estilo arquitectónico.</p>
                 </div>
             </div>
         </section>
@@ -350,7 +506,43 @@
             </div>
         </section>
 
-        <footer style="margin-top: 5rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.05); color: var(--text-dim); text-align: center;">
+        <section id="instalacion">
+            <h2><i class="fas fa-download"></i> Instalación y Requisitos</h2>
+            <div class="card">
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 1rem;"><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 10px;"></i> <strong>Paper 1.21+:</strong> El plugin está optimizado para las últimas versiones de PaperMC.</li>
+                    <li style="margin-bottom: 1rem;"><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 10px;"></i> <strong>Vault (Opcional):</strong> Necesario para habilitar el sistema de tiendas y precios.</li>
+                    <li style="margin-bottom: 1rem;"><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 10px;"></i> <strong>PlaceholderAPI (Opcional):</strong> Para mostrar la higiene en Scoreboards o TabLists.</li>
+                </ul>
+                <div style="margin-top: 1.5rem; padding: 1.5rem; background: rgba(0,0,0,0.3); border-radius: 16px; font-family: 'Courier New', Courier, monospace; border: 1px solid rgba(255,255,255,0.1);">
+                    <span style="color: var(--primary);"># Guía Rápida</span><br>
+                    1. Sube el <span style="color: var(--accent);">hygienemc.jar</span> a la carpeta /plugins<br>
+                    2. Reinicia o inicia el servidor<br>
+                    3. Personaliza los archivos YAML en <span style="color: var(--secondary);">/plugins/HygieneMC/</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq">
+            <h2><i class="fas fa-question-circle"></i> Preguntas Frecuentes</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <h3 style="color: var(--primary); font-size: 1.1rem; margin-bottom: 0.8rem;">¿Cómo evito ensuciarme tan rápido?</h3>
+                    <p>Evita correr (sprint) y saltar excesivamente. Estar en reposo o caminando disminuye drásticamente el ritmo de suciedad.</p>
+                </div>
+                <div class="card">
+                    <h3 style="color: var(--primary); font-size: 1.1rem; margin-bottom: 0.8rem;">¿El mal olor afecta a otros?</h3>
+                    <p>Visualmente sí. Otros jugadores verán las partículas de mal olor y escucharán sonidos si estás en el estado "Asqueroso".</p>
+                </div>
+                <div class="card">
+                    <h3 style="color: var(--primary); font-size: 1.1rem; margin-bottom: 0.8rem;">¿Puedo desactivar el sistema en ciertos mundos?</h3>
+                    <p>Sí, puedes gestionar los permisos o usar plugins de gestión de mundos para limitar dónde actúa el sistema de higiene.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer
+            style="margin-top: 5rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.05); color: var(--text-dim); text-align: center;">
             <p>&copy; 2026 HygieneMC Plugin. Desarrollado para servidores de alto rendimiento.</p>
         </footer>
     </main>
@@ -378,4 +570,5 @@
         });
     </script>
 </body>
+
 </html>
